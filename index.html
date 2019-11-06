@@ -56,8 +56,8 @@
     .panel4 { background-image:url(./img/make-better-choices.jpg); }
     .panel5 { background-image:url(./img/my-future-aspirations.jpg); }
 
-    /* Flex Items */
-    .panel > * {
+   /* Flex Items */
+   .panel > * {
       margin: 0;
       width: 100%;
       transition: transform 0.5s;
@@ -66,6 +66,11 @@
       justify-content: center;
       align-items: center;
     }
+
+    .panel > *:first-child { transform: translateY(-100%); }
+    .panel.open-active > *:first-child { transform: translateY(0); }
+    .panel > *:last-child { transform: translateY(100%); }
+    .panel.open-active > *:last-child { transform: translateY(0); }
 
     .panel p {
       text-transform: uppercase;
@@ -76,6 +81,11 @@
     
     .panel p:nth-child(2) {
       font-size: 4em;
+    }
+
+    .panel.open {
+      flex: 5;
+      font-size: 40px;
     }
 
     
